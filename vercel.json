@@ -1,10 +1,1 @@
-{
-  "framework": "nextjs",
-  "settings": {
-    "framework": "nextjs",
-    "turbopack": {
-      "preview": true,
-      "production": false
-    }
-  }
-}
+﻿{"framework":"nextjs"}
