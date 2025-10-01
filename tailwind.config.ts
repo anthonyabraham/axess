@@ -10,13 +10,11 @@ const config: Config = {
     extend: {},
   },
   plugins: [],
+  // @ts-ignore: safelist is supported by Tailwind but missing in older type defs
   safelist: [
-    // Hero / section gradients
     'bg-[radial-gradient(circle_at_20%_30%,rgba(42,168,255,0.25),transparent_60%)]',
     'bg-[radial-gradient(circle_at_80%_70%,rgba(0,210,143,0.25),transparent_60%)]',
     'bg-[linear-gradient(120deg,rgba(42,168,255,0.15),transparent_40%)]',
-
-    // Ensure our darker panels never get purged
     'bg-slate-900',
     'border-slate-800',
     'border-slate-700',
