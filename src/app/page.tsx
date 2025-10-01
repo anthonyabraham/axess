@@ -56,7 +56,6 @@ function Nav() {
             <li><a href="#fleet" className="hover:text-white">Fleet</a></li>
             <li><a href="#partners" className="hover:text-white">Partners</a></li>
             <li><a href="#contact" className="hover:text-white">Contact</a></li>
-            <li><a href="#demo" className="rounded-xl px-4 py-2 font-medium text-black" style={{ background: brand.accent }}>Request a demo</a></li>
           </ul>
         </div>
         {open && (
@@ -64,7 +63,6 @@ function Nav() {
             {["Platform","Hubs","Fleet","Partners","Contact"].map((label) => (
               <li key={label}><a href={`#${label.toLowerCase()}`}>{label}</a></li>
             ))}
-            <li><a href="#demo" className="rounded-xl px-4 py-2 font-medium text-black inline-block" style={{ background: brand.accent }}>Request a demo</a></li>
           </ul>
         )}
       </nav>
@@ -85,7 +83,6 @@ function Hero() {
             Axess orchestrates AV fleets and hubs as a unified network—delivering safe rides, efficient logistics, and inclusive access across every axis of movement.
           </p>
           <div className="mt-6 flex gap-3">
-            <a href="#demo" className="rounded-xl px-5 py-3 font-medium text-black" style={{ background: brand.accent }}>Request a demo</a>
             <a href="#platform" className="rounded-xl px-5 py-3 font-medium border border-slate-700 hover:border-slate-500">Explore the platform</a>
           </div>
         </div>
@@ -109,9 +106,9 @@ function Hero() {
 
 function Pillars() {
   const items = [
-    { title: "Precision Platform", desc: "Telematics, dispatch, and autonomy orchestration across every axis.", },
-    { title: "Accessible by Design", desc: "Hubs and vehicles meet inclusive standards with kerb-level boarding.", },
-    { title: "Infrastructure-Grade", desc: "Bankable uptime SLAs, modular hubs, and grid-integrated charging.", },
+    { title: "Precision Platform", desc: "Telematics, dispatch, and autonomy orchestration across every axis." },
+    { title: "Accessible by Design", desc: "Hubs and vehicles meet inclusive standards with kerb-level boarding." },
+    { title: "Infrastructure-Grade", desc: "Bankable uptime SLAs, modular hubs, and grid-integrated charging." },
   ];
   return (
     <section id="platform" className={`${brand.bg} ${brand.text} py-16`}>
@@ -200,22 +197,23 @@ function Partners() {
   );
 }
 
-function CTA() {
+function Contact() {
   return (
-    <section id="demo" className={`${brand.bg} ${brand.text} py-16`}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className={`${brand.panel} rounded-2xl p-8 md:p-10 border border-slate-800 grid md:grid-cols-2 gap-6`}>
-          <div>
-            <h3 className="text-2xl font-semibold">Bring Axess to your city or campus</h3>
-            <p className={`mt-2 ${brand.subtext}`}>Pilot in 90 days with pre-certified vehicles, hub modules, and playbooks. We handle the stack—hardware to dispatch.</p>
-          </div>
-          <form className="grid gap-3">
-            <label htmlFor="email" className="text-sm text-slate-300">Work email</label>
-            <input id="email" type="email" placeholder="you@org.com" required
-              className="w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 placeholder-slate-500 focus:outline-none focus:ring-2"/>
-            <button className="mt-2 rounded-xl px-5 py-3 font-medium text-black w-full" style={{background:brand.accent}}>Request a demo</button>
-            <span className="text-xs text-slate-500">By submitting, you agree to our privacy policy.</span>
-          </form>
+    <section id="contact" className={`${brand.bg} ${brand.text} py-16`}>
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-2xl sm:text-3xl font-semibold">Contact Us</h2>
+        <p className={`mt-3 ${brand.subtext}`}>
+          We’d love to hear from you. Reach out to learn more about Axess and how we can support your mobility initiatives.
+        </p>
+        <div className="mt-8 flex flex-col items-center gap-4">
+          <a
+            href="mailto:info@axess.xyz"
+            className="inline-block rounded-xl px-6 py-3 font-medium text-black"
+            style={{ background: brand.accent }}
+          >
+            Email us at info@axess.xyz
+          </a>
+          <p className="text-slate-300">📍 HQ: Miami, FL</p>
         </div>
       </div>
     </section>
@@ -229,7 +227,7 @@ function Footer() {
         <div><Logo size={32}/><p className={`mt-3 ${brand.subtext}`}>Axess unifies fleets and hubs into a resilient, accessible mobility network.</p></div>
         <div><h4 className="font-medium">Company</h4><ul className="mt-3 space-y-2 text-sm"><li><a href="#">About</a></li><li><a href="#">Careers</a></li></ul></div>
         <div><h4 className="font-medium">Solutions</h4><ul className="mt-3 space-y-2 text-sm"><li><a href="#platform">Platform</a></li><li><a href="#fleet">Fleet</a></li></ul></div>
-        <div><h4 className="font-medium">Contact</h4><ul className="mt-3 space-y-2 text-sm"><li><a href="#contact">Get in touch</a></li><li><a href="#demo">Request a demo</a></li></ul></div>
+        <div><h4 className="font-medium">Contact</h4><ul className="mt-3 space-y-2 text-sm"><li><a href="#contact">Get in touch</a></li></ul></div>
       </div>
       <div className="border-t border-slate-800 py-6 text-center text-xs text-slate-500">© {new Date().getFullYear()} Axess Mobility, Inc. All rights reserved.</div>
     </footer>
@@ -246,8 +244,7 @@ export default function Page() {
         <Hubs />
         <Fleet />
         <Partners />
-        <CTA />
-        <div id="contact" className="sr-only" aria-hidden="true" />
+        <Contact />
       </main>
       <Footer />
     </div>
